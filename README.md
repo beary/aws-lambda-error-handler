@@ -3,23 +3,33 @@
 ## Usage
 ```typescript
 /* testHandler.js */
-import { withCatch, BaseError } from 'aws-lambda-error-handler'
+import { BaseError, withCatch } from 'aws-lambda-error-handler'
 
-class UserNameConflictError extends BaseError {
+class MyError1 extends BaseError {
   constructor() {
-    super('Username already exists')
+    super('😠')
     this.statusCode = 400
+  }
+}
+
+class MyError2 extends BaseError {
+  constructor() {
+    super('💔')
+    this.statusCode = 404
   }
 }
 
 export const fn = withCatch(
   async (event, context) => {
-    throw new UserNameConflictError()
+    const q = event.queryStringParameters
+    if (q && q.p === '1')
+      throw new MyError1()
+    else if (q && q.p === '2')
+      throw new MyError2()
+
     return {
       statusCode: 200,
-      body: JSON.stringify({
-        message: 'ok'
-      })
+      body: '{"message":"😄"}'
     }
   }
 )
