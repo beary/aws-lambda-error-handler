@@ -1,6 +1,6 @@
 import { APIGatewayEvent, Context, APIGatewayProxyResult } from 'aws-lambda'
 
-type AsyncHandler = (event: APIGatewayEvent, context: Context) => APIGatewayProxyResult
+type AsyncHandler = (event: APIGatewayEvent, context: Context) => Promise<APIGatewayProxyResult>
 
 export class BaseError extends Error {
   public statusCode: number

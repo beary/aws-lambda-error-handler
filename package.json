@@ -1,6 +1,6 @@
 {
   "name": "aws-lambda-error-handler",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "AWS Lambda error handler",
   "main": "lib/index.js",
   "scripts": {
@@ -22,8 +22,10 @@
     "url": "https://github.com/beary/aws-lambda-error-handler/issues"
   },
   "homepage": "https://github.com/beary/aws-lambda-error-handler#readme",
+  "dependencies": {
+    "@types/aws-lambda": "^8.10.18"
+  },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.18",
     "@types/node": "^10.12.20",
     "typescript": "^3.2.4"
   }
