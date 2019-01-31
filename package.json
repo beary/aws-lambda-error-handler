@@ -1,0 +1,30 @@
+{
+  "name": "aws-lambda-error-handler",
+  "version": "0.0.1",
+  "description": "AWS Lambda error handler",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beary/aws-lambda-error-handler.git"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "error"
+  ],
+  "author": "beary",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/beary/aws-lambda-error-handler/issues"
+  },
+  "homepage": "https://github.com/beary/aws-lambda-error-handler#readme",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.18",
+    "@types/node": "^10.12.20",
+    "typescript": "^3.2.4"
+  }
+}
